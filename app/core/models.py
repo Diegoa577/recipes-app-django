@@ -1,7 +1,7 @@
-from django.db import models  # noqa
 """
 Database models.
 """
+
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -9,7 +9,6 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
-# Create your models here.
 
 class UserManager(BaseUserManager):
     """Manager for users."""
@@ -23,7 +22,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-    
+
     def create_superuser(self, email, password):
         """Create and return a new superuser."""
         user = self.create_user(email, password)
